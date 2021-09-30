@@ -45,7 +45,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className = 'app-screens'>
       {!game && !tutorial ? <TitleScreen tutorial = {startTutorial} /> : null}
       {tutorial ? <Tutorial back = {endTutorial}/> : null}
     </div>

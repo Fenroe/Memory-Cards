@@ -1,0 +1,88 @@
+/* 
+lightest: #FFF4C9;
+light: #C7E78B;
+dark: #81AE64;
+darkest: #709053;
+*/ 
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.title-screen {
+  background-color: #709053;
+  height: 100vh;
+  width: 100vw;
+  padding: 10rem;
+}
+
+.title-heading-container {
+  background-color: #81AE64;
+  width: 75vw;
+  margin: 0 auto;
+  border: 5px dotted #C7E78B;
+}
+
+.title-heading {
+  font-size: 10rem;
+  font-weight: 700;
+  text-align: center;
+  color: #FFF4C9;
+}
+
+.title-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 8rem;
+}
+
+.app-button {
+  margin: 2rem;
+  font-size: 4rem;
+  background-color: #81AE64;
+  color: #FFF4C9;
+  border: 2px dotted #C7E78B;
+  width: 25rem;
+  height: 5rem;
+  border-radius: .7rem;
+}
+
+.app-button:hover {
+  cursor: pointer;
+  background-color: #FFF4C9;
+  color: #81AE64;
+}
+
+.tutorial-screen {
+  background-color: #709053;
+  height: 100vh;
+  width: 100vw;
+  padding: 10rem;
+}
+
+.tutorial-heading {
+  font-size: 10rem;
+  font-weight: 700;
+  text-align: center;
+  color: #FFF4C9;
+}
+
+.tutorial-text-container {
+  font-size: 4rem;
+  color: #FFF4C9;
+  text-align: center;
+  background-color: #81AE64;
+  margin-top: 2rem;
+}
+
+.tutorial-text {
+  margin-bottom: 1rem;
+}
+
+.tutorial-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 8rem;
+}

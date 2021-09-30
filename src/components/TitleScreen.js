@@ -2,13 +2,13 @@ import React from "react";
 
 const TitleScreen = (props) => {
   return (
-    <div>
-      <div>
-        <h1>52 Card Pickup</h1>
+    <div className = 'title-screen'>
+      <div className = 'title-heading-container'>
+        <h1 className = 'title-heading'>52 Card Pickup</h1>
       </div>
-      <div>
-        <button>Start</button>
-        <button onClick = {props.tutorial}>How To Play</button>
+      <div className = 'title-button-container'>
+        <button className = 'app-button'>Start</button>
+        <button className = 'app-button' onClick = {props.tutorial}>How To Play</button>
       </div>
     </div>
   )
