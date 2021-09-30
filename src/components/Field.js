@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react';
 import Card from './Card';
 
@@ -17,7 +18,7 @@ const Field = (props) => {
   }, [])
 
   return (
-    <div>
+    <div className = 'game-field'>
       {renderCards()}
     </div>
   )

@@ -56,14 +56,18 @@ const Game = (props) => {
       if (score + 1 > props.highScore) {
         props.setHighScore(score + 1);
       }
-      fillCurrentCards();
+      if (pickedCards.length === 52) {
+        props.declareWinner();
+      } else {
+        fillCurrentCards();
+      }    
     } else {
       props.endGame();
     }
   }
 
   return (
-    <div>
+    <div className = 'game-screen'>
       <Scoreboard score = {score} highScore = {props.highScore}/>
       <Field currentCards = {currentCards} fillCurrentCards = {fillCurrentCards} chooseCard = {chooseCard}/>
     </div>

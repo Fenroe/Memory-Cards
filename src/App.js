@@ -26,6 +26,8 @@ import React, { useState } from "react";
 import TitleScreen from "./components/TitleScreen";
 import Tutorial from "./components/Tutorial";
 import Game from "./components/Game";
+import Gameover from "./components/Gameover";
+import Winner from "./components/Winner";
 
 
 function App() {
@@ -35,12 +37,17 @@ function App() {
 
   const [highScore, setHighScore] = useState(0);
 
+  const [gameover, setGameover] = useState(false);
+
+  const [winner, setWinner] = useState(false);
+
   const startGame = () => {
     setGame(true);
   };
 
   const endGame = () => {
     setGame(false);
+    setGameover(true);
   }
 
   const startTutorial = () => {
@@ -51,11 +58,18 @@ function App() {
     setTutorial(false);
   };
 
+  const declareWinner = () => {
+    setGame(false);
+    setWinner(true);
+  }
+
   return (
     <div className = 'app-screens'>
-      {!game && !tutorial ? <TitleScreen game = {startGame} tutorial = {startTutorial} /> : null}
+      {!game && !tutorial && !gameover && !winner ? <TitleScreen game = {startGame} tutorial = {startTutorial} /> : null}
       {tutorial ? <Tutorial back = {endTutorial}/> : null}
-      {game ? <Game highScore = {highScore} setHighScore = {setHighScore} endGame = {endGame}/> : null}
+      {game ? <Game highScore = {highScore} setHighScore = {setHighScore} endGame = {endGame} declareWinner = {declareWinner}/> : null}
+      {gameover ? <Gameover highScore = {highScore}/> : null}
+      {winner ? <Winner /> : 0}
     </div>
   );
 }

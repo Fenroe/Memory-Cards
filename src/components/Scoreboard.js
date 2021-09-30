@@ -1,6 +1,6 @@
 const Scoreboard = (props) => {
   return (
-    <div>
+    <div className = 'game-scoreboard'>
       <div>
         <h2>Score: {props.score}</h2>
       </div>

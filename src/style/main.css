@@ -86,3 +86,24 @@ darkest: #709053;
   justify-content: center;
   margin: 8rem;
 }
+
+.game-screen {
+  background-color: #709053;
+  height: 100vh;
+  width: 100vw;
+}
+
+.game-scoreboard {
+  color: #FFF4C9;
+  font-size: 2rem;
+  width: 50rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.game-field {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70rem;
+  margin: 0 auto;
+}
