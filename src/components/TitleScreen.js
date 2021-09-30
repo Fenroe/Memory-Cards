@@ -7,7 +7,7 @@ const TitleScreen = (props) => {
         <h1 className = 'title-heading'>52 Card Pickup</h1>
       </div>
       <div className = 'title-button-container'>
-        <button className = 'app-button'>Start</button>
+        <button className = 'app-button' onClick = {props.game}>Start</button>
         <button className = 'app-button' onClick = {props.tutorial}>How To Play</button>
       </div>
     </div>
