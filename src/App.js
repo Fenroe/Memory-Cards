@@ -19,23 +19,35 @@
 // after this, cards will be reshuffled
 // because there needs to be a chance of failing, the hand should always have a card from chosen cards
 // - if after hand array is full there is no card from chosen cards and chosen cards isn't empty, reshuffle
-// needs a scoreboard to track current score and a best score that displays the highest value the current score has ever had
-// card component needs a key and a prop to set background image
-// cards need to be displayed in a random order whenever one is clicked
-// - function to randomise their order
-// - an onClick prop on the cards
-// - function should be called when component mounts 
-// there should always be the possibility to fail: previously selected cards should appear in the selection
-// - store chosen cards in array
-// - if selected card is in array of chosen cards, game over
-// - if hand doesn't include cards from chosen cards, and there are cards in said array, reshuffle
-// - if hand only contains cards from chosen cards, reshuffle 
-// 
+// because there always needs to be a chance of success, the hand should not solely consist of cards from chosen cards
+// - if after hand array is full there is nothing but chosen cards in hand, reshuffle
+// if score is 52 then player has won 
+import React, { useState } from "react";
+import TitleScreen from "./components/TitleScreen";
+import Tutorial from "./components/Tutorial";
+
 
 function App() {
+  const [game, setGame] = useState(false);
+
+  const [tutorial, setTutorial] = useState(false);
+
+  const startGame = () => {
+    setGame(true);
+  };
+
+  const startTutorial = () => {
+    setTutorial(true);
+  };
+
+  const endTutorial = () => {
+    setTutorial(false);
+  };
+
   return (
     <div>
-
+      {!game && !tutorial ? <TitleScreen tutorial = {startTutorial} /> : null}
+      {tutorial ? <Tutorial back = {endTutorial}/> : null}
     </div>
   );
 }
