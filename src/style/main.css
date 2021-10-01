@@ -9,6 +9,7 @@ darkest: #709053;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .title-screen {
@@ -106,4 +107,42 @@ darkest: #709053;
   flex-wrap: wrap;
   width: 70rem;
   margin: 0 auto;
+}
+
+.game-over-screen {
+  background-color: #709053;
+  height: 100vh;
+  width: 100vw; 
+  padding: 10rem;
+}
+
+.game-over-heading {
+  font-size: 10rem;
+  color: #FFF4C9;
+  text-align: center;
+}
+
+.game-over-text {
+  font-size: 5rem;
+  color: #FFF4C9;
+  text-align: center;
+}
+
+.game-over-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 8rem;
+}
+
+.winner-screen {
+  background-color: #709053;
+  height: 100vh;
+  width: 100vw; 
+  padding: 10rem;
+}
+
+.winner-text {
+  font-size: 10rem;
+  color: #FFF4C9;
+  text-align: center;
 }

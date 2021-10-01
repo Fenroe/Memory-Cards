@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
 import Scoreboard from "./Scoreboard";
 import Field from "./Field";
 
@@ -8,6 +9,8 @@ const Game = (props) => {
   const [currentCards, setCurrentCards] = useState([]);
 
   const [pickedCards, setPickedCards] = useState([]);
+
+  const maxScore = 52;
 
   const fillCurrentCards = () => {
     const cards = [];
@@ -55,16 +58,15 @@ const Game = (props) => {
       setScore(score + 1);
       if (score + 1 > props.highScore) {
         props.setHighScore(score + 1);
-      }
-      if (pickedCards.length === 52) {
-        props.declareWinner();
-      } else {
-        fillCurrentCards();
-      }    
+      } 
     } else {
       props.endGame();
     }
   }
+
+  useEffect(() => {
+    score < maxScore ? fillCurrentCards() : props.declareWinner();
+  }, [score])
 
   return (
     <div className = 'game-screen'>

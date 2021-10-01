@@ -63,13 +63,17 @@ function App() {
     setWinner(true);
   }
 
+  const endGameover = () => {
+    setGameover(false);
+  }
+
   return (
     <div className = 'app-screens'>
       {!game && !tutorial && !gameover && !winner ? <TitleScreen game = {startGame} tutorial = {startTutorial} /> : null}
       {tutorial ? <Tutorial back = {endTutorial}/> : null}
       {game ? <Game highScore = {highScore} setHighScore = {setHighScore} endGame = {endGame} declareWinner = {declareWinner}/> : null}
-      {gameover ? <Gameover highScore = {highScore}/> : null}
-      {winner ? <Winner /> : 0}
+      {gameover ? <Gameover highScore = {highScore} restart = {endGameover}/> : null}
+      {winner ? <Winner /> : null}
     </div>
   );
 }

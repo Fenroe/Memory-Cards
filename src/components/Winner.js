@@ -1,6 +1,6 @@
 const Winner = () => {
-  <div>
-    <h2>Amazing!</h2>
+  <div className = 'winner-screen'>
+    <h2 className = 'winner-heading'>Amazing!</h2>
   </div>
 }
 
